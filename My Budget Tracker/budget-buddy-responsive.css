@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css?family=Advent+Pro|Montserrat&display=swap');
+
+/* universal styling */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}
+
+body {
+	background-color: #063e66;
+	height: 100vh;
+	font-family: 'Advent Pro', sans-serif;
+
+	color: #081623;
+}
+
+.main-title {
+	grid-area: header;
+	margin: auto;
+}
+
+/* main stuff */
+
+h1 {
+	letter-spacing: 1px;
+	margin: 0;
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1.1;
+	padding-top: 10px;
+}
+
+h4 {
+	margin: 0;
+	text-transform: uppercase;
+	font-size: 1.5em;
+}
+
+.grid-container {
+	display: grid;
+
+	grid-template-areas:
+		'header header  header'
+		'balance-amount income-amount expense-amount'
+		'input-form history-list history-list'
+		'categories categories  categories'
+		'footer footer  footer';
+	grid-template-columns: repeat(3, 1fr);
+	grid-column-gap: 0.25em;
+	grid-row-gap: 1em;
+}
+
+/* .main-container {
+	margin: auto;
+	width: 75vw;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+} */
+
+/* form styling  */
+#input-form {
+	grid-area: input-form;
+	border-radius: 5px;
+	background-color: #a3cae6;
+	margin: auto;
+	width: 95%;
+	padding: 10px;
+	justify-content: center;
+	align-content: center;
+	text-align: center;
+	border: 2px solid #020308;
+}
+
+#input-form h2 {
+	padding-bottom: 10px;
+}
+
+#categories-select,
+input[type='text'],
+input[type='number'] {
+	border: 1px solid #020308;
+	border-radius: 3px;
+	display: block;
+	font-size: 0.8em;
+	padding: 7px;
+	width: 90%;
+	margin: auto;
+}
+
+.form-control p {
+	text-transform: lowercase;
+	font-size: 0.75em;
+	padding-bottom: 5px;
+}
+
+#btn {
+	cursor: pointer;
+	background-color: #5a3324;
+	border-radius: 5px;
+	color: #a99e7b;
+	border-radius: 3px;
+	border: 0;
+	display: block;
+	font-size: 1em;
+	margin: 10px auto;
+	padding: 10px;
+	width: 90%;
+}
+
+/* main totals */
+.amounts {
+	margin: auto;
+	text-align: center;
+	height: 80%;
+	width: 80%;
+	background-color: #a3cae6;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	/* align-items: center; */
+	padding: 1em;
+}
+
+.amounts h4 {
+	font-size: 1.5em;
+}
+
+.amounts p {
+	font-size: 1.25em;
+}
+
+#balance,
+#income,
+#expenses {
+	border-radius: 5px;
+	border-style: solid;
+	border-width: 2px;
+}
+
+#balance {
+	grid-area: balance-amount;
+	border-color: #020308;
+}
+
+#income {
+	grid-area: income-amount;
+	border-color: #006e3c;
+}
+
+#expenses {
+	grid-area: expense-amount;
+	border-color: #9f2b00;
+}
+
+.money {
+	font-size: 1.25em;
+	letter-spacing: 1px;
+	margin: 5px 0px;
+}
+
+.money.plus {
+	color: #006e3c;
+}
+
+.money.minus {
+	color: #9f2b00;
+}
+
+.warning {
+	background-color: #f3867a;
+}
+
+.warning::placeholder {
+	color: #9f2b00;
+}
+
+/* all lists */
+ul {
+	padding: 10px;
+}
+
+li {
+	background-color: #cecbd2;
+	color: #333;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	list-style: none;
+	margin: 5px 0;
+	padding-left: 5px;
+	justify-items: end;
+	border-radius: 3px;
+}
+
+.list-desc {
+	grid-area: list-desc;
+}
+.list-amount {
+	grid-area: list-amount;
+}
+.list-cat {
+	grid-area: list-cat;
+}
+
+.delete-btn {
+	border: none;
+	padding: 5px;
+	background-color: #9f2b00;
+	color: #cecbd2;
+}
+
+/* History list */
+#history-container {
+	margin: 5px auto;
+	grid-area: history-list;
+	text-align: center;
+	width: 80%;
+	background-color: #a3cae6;
+	border: 2px solid #020308;
+	border-radius: 5px;
+}
+
+#history-list li.plus {
+	border-left: 10px solid #006e3c;
+}
+
+#history-list li.minus {
+	border-left: 10px solid #9f2b00;
+}
+
+#history-list h3 {
+	font-size: 1.5;
+}
+
+/* categories */
+#categories-container {
+	grid-area: categories;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	margin: auto;
+}
+
+.categories {
+	text-align: center;
+	border: #020308 solid 2px;
+	border-radius: 5px;
+	width: 400px;
+	font-size: 1em;
+	margin-top: 10px;
+}
+
+.categories h5 {
+	padding: 5px;
+	display: flex;
+	justify-content: space-between;
+	font-size: 1em;
+}
+
+.categories li {
+	padding: 5px;
+}
+
+.categories:nth-child(1) {
+	background-color: #686573;
+}
+
+.categories:nth-child(2) {
+	background-color: #71879a;
+}
+
+.categories:nth-child(3) {
+	background-color: #b1c5d4;
+}
+
+.categories:nth-child(4) {
+	background-color: #d6d7dc;
+}
+
+.categories:nth-child(5) {
+	background-color: #d8b9aa;
+}
+
+/* footer */
+footer {
+	text-align: center;
+	grid-area: footer;
+}
+
+footer p {
+	font-size: 0.85em;
+	line-height: 1.5em;
+	color: #839496;
+}
+
+footer a {
+	text-decoration: none;
+	cursor: pointer;
+	color: #839496;
+	padding: 0px 10px;
+}
+
+footer a:not(:last-child) {
+	border-right: 1px solid #020308;
+}
+/* media queries */
+@media only screen and (max-width: 600px) {
+	.grid-container {
+		display: grid;
+
+		grid-template-areas:
+			'header header  header'
+			'balance-amount income-amount expense-amount'
+			'input-form input-form input-form'
+			' history-list history-list history-list'
+			'categories categories  categories'
+			'footer footer  footer';
+		grid-template-columns: repeat(3, 1fr);
+		grid-column-gap: 0.25em;
+		grid-row-gap: 1em;
+	}
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+	.form-control p {
+		font-size: 0.6em;
+	}
+}
+
+@media only screen and (min-width: 769px) and (max-width: 991px) {
+	#categories-container {
+		grid-area: categories;
+		display: grid;
+		grid-template-columns: repeat(5, minmax(0, 1fr));
+		grid-column-gap: 0.5em;
+		margin: auto;
+		padding: 5px;
+	}
+
+	.categories {
+		width: auto;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	h1 {
+		font-size: 3em;
+	}
+
+	.main-container {
+		margin: auto;
+		width: 75vw;
+	}
+
+	/* form styling  */
+
+	#categories-select,
+	input[type='text'],
+	input[type='number'] {
+		font-size: 1em;
+	}
+
+	li {
+		font-size: 1.25em;
+		margin: 5px 0;
+		padding: 10px;
+	}
+
+	/* categories */
+	#categories-container {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		grid-column-gap: 2em;
+	}
+
+	.categories {
+		text-align: center;
+		border: #020308 solid 2px;
+		border-radius: 5px;
+		width: auto;
+	}
+
+	.categories h5 {
+		font-size: 1.25em;
+		padding: 5px;
+		display: flex;
+		justify-content: space-between;
+		font-weight: normal;
+	}
+
+	.categories li {
+		font-size: 1em;
+	}
+}

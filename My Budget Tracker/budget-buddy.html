@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="budget-buddy.css" />
+		<title>My Budget Buddy</title>
+	</head>
+	<body>
+		<div id="main-container">
+			<div class="grid-container">
+				<header id="main-title">
+					<h1>My Budget Buddy</h1>
+				</header>
+				<!-- amounts -->
+				<section class="amounts neu-box" id="balance">
+					<h2>Balance</h2>
+					<p class="money" id="balance-p">
+						$
+						<span id="balance-text"></span>
+					</p>
+				</section>
+				<section class="amounts neu-box" id="income">
+					<h2>Income</h2>
+					<p class="money plus">
+						$
+						<span id="income-text"></span>
+					</p>
+				</section>
+				<section class="amounts neu-box" id="expenses">
+					<h2>Expenses</h2>
+					<p class="money minus">
+						$
+						<span id="expenses-text"></span>
+					</p>
+				</section>
+				<!-- input form -->
+				<section class="neu-box" id="input-form">
+					<h2>Add New Transaction</h2>
+					<form id="transaction-form">
+						<div class="form-control">
+							<!-- dropdown menu -->
+							<div class="inc-exp-select">
+								<label><h3>Select a Category</h3></label>
+								<select name="categories" id="categories-select" required>
+									<option value="" disabled hidden selected>Categories</option>
+									<option value="income">Income</option>
+									<option value="entertainment">Entertainment</option>
+									<option value="food">Food</option>
+									<option value="clothing">Clothing</option>
+									<option value="bills">Bills</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-control">
+							<label><h3>Description</h3></label>
+							<input type="text" id="description-input" placeholder="Enter Description" />
+						</div>
+
+						<div class="form-control">
+							<label for="amount-value"><h3>Amount</h3></label>
+							<p>
+								<span class="plus">(Income - positive)</span>
+								<span class="minus">(Expense - negative)</span>
+							</p>
+							<input type="text" id="amount-input" placeholder="Enter an amount" value="" />
+						</div>
+						<input type="submit" id="btn" value="Add Transaction" />
+					</form>
+				</section>
+				<!-- history -->
+				<section class="neu-box" id="history-container">
+					<h2>History</h2>
+					<h3>Total: $0.00</h3>
+					<ul id="history-list"></ul>
+				</section>
+				<section class="neu-box categories" id="income-cat">
+					<h5>Income<span id="inc-total">$000</span></h5>
+					<ul id="inc-list"></ul>
+				</section>
+				<section class="neu-box categories" id="ent-cat">
+					<h5>Entertainment<span id="ent-total">$000</span></h5>
+					<ul id="ent-list"></ul>
+				</section>
+				<section class="neu-box categories" id="food-cat">
+					<h5>Food<span id="food-total">$000</span></h5>
+					<ul id="food-list">
+						<li>Dinner - $ Money Spent</li>
+						<li>Dinner - $ Money Spent</li>
+						<li>Dinner - $ Money Spent</li>
+					</ul>
+				</section>
+				<section class="neu-box categories" id="clothing-cat">
+					<h5>Clothing<span id="clothing-total">$000</span></h5>
+					<ul id="clothing-list"></ul>
+				</section>
+				<section class="neu-box categories" id="bills-cat">
+					<h5>Bills<span id="bills-total">$000</span></h5>
+					<ul id="bills-list"></ul>
+				</section>
+
+				<footer>
+					<p>created, designed & coded by LIFO The Party</p>
+					<p>
+						<a href="mailto:ceceliacshelley@gmail.com">Cecelia Shelly</a>
+						<a href="mailto:chelsswylie@gmail.com">Chelsea Wylie</a>
+						<a href="mailto:ivona.ivezaj@gmail.com">Ivona Gojcaj</a>
+						<a href="mailto:vasavada.ankur@gmail.com">Ankur Vasavada</a>
+					</p>
+				</footer>
+			</div>
+		</div>
+
+		<script src="budget-buddy.js"></script>
+	</body>
+</html>

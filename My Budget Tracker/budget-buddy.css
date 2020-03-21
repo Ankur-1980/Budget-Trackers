@@ -1,0 +1,675 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+*:focus {
+	outline: none;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	background-color: #ebf5fc;
+	color: #32a3b1;
+}
+
+#main-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+h1 {
+	font-size: 2.5em;
+}
+
+h2 {
+	font-size: 1.75em;
+	text-transform: uppercase;
+}
+
+h3 {
+	font-size: 1.25;
+	padding-top: 10px;
+}
+
+ul {
+	padding: 10px;
+}
+
+li {
+	background-color: #fff;
+	color: #32a3b1;
+	display: grid;
+	justify-items: end;
+	grid-template-columns: 1fr 0.5fr 1fr 0.25fr;
+	list-style: none;
+	margin: 10px 0;
+	padding: 10px;
+	align-items: center;
+	border-radius: 40px;
+	font-size: 1.2em;
+	box-shadow: -2px -2px 6px rgba(255, 255, 255, 1), 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.list-desc {
+	place-self: center start;
+}
+
+.delete-btn {
+	border: none;
+	border-radius: 50%;
+	padding: 10px;
+	background-color: #d11203;
+	color: #fff;
+}
+
+.grid-container {
+	display: grid;
+	gap: 1em;
+	grid-template-columns: repeat(5, 1fr);
+	/* grid-template-rows: repeat(5, auto); */
+}
+
+.warning {
+	background-color: #f3867a;
+}
+
+.warning::placeholder {
+	color: #d11203;
+}
+
+.neu-box {
+	background-color: #ebf5fc;
+	box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.8), 5px 5px 10px rgba(0, 0, 0, 0.1);
+	padding: 40px 40px 60px;
+	border-radius: 10px;
+	text-align: center;
+}
+
+#main-title {
+	grid-area: header;
+	grid-area: 1 / 1 / 2 / 6;
+	margin: auto;
+	letter-spacing: 0.5em;
+}
+
+.amounts {
+	margin: auto;
+
+	padding: 2em;
+}
+
+.money {
+	font-size: 1.25em;
+	margin: 5px 0px;
+}
+
+.money.plus,
+span.plus {
+	color: #02a01e;
+}
+
+.money.minus,
+span.minus {
+	color: #d11203;
+}
+
+#balance {
+	grid-area: balance-total;
+	grid-area: 2 / 2 / 3 / 3;
+}
+
+#income {
+	grid-area: income;
+	grid-area: 2 / 3 / 3 / 4;
+}
+
+#expenses {
+	grid-area: expenses;
+	grid-area: 2 / 4 / 3 / 5;
+}
+
+#input-form {
+	grid-area: input;
+	grid-area: 3 / 1 / 4 / 3;
+	margin: auto;
+	/* padding: 1em; */
+}
+
+#categories-select,
+input,
+#btn {
+	background-color: #ebf5fc;
+	display: block;
+	font-size: 1em;
+	height: 50px;
+	border-radius: 40px;
+	padding: 5px 15px;
+	width: 100%;
+	margin: 10px auto;
+	color: #32a3b1;
+	border: none;
+	box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 1), inset 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#categories-select,
+input[type='text']::placeholder,
+input[type='number']::placeholder {
+	color: #999;
+}
+
+#btn {
+	margin-top: 20px;
+	box-shadow: -2px -2px 6px rgba(255, 255, 255, 1), 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#btn:active {
+	color: #006c9c;
+	box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 1), inset 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-control p {
+	text-transform: lowercase;
+	font-size: 0.75em;
+	padding-bottom: 5px;
+}
+
+#history-container {
+	grid-area: history;
+	grid-area: 3 / 3 / 4 / 6;
+}
+
+#history-list li.plus {
+	border-left: 10px solid #02a01e;
+}
+
+#history-list li.minus {
+	border-left: 10px solid #d11203;
+}
+
+h5 {
+	font-size: 1em;
+	display: flex;
+	justify-content: space-between;
+	font-weight: normal;
+}
+
+.categories {
+	padding: 10px 10px 15px;
+}
+
+.categories li {
+	font-size: 0.9em;
+	display: flex;
+	justify-content: space-between;
+}
+
+#income-cat {
+	grid-area: income-cat;
+	grid-area: 4 / 1 / 5 / 2;
+}
+
+#ent-cat {
+	grid-area: ent-cat;
+	grid-area: 4 / 2 / 5 / 3;
+}
+
+#food-cat {
+	grid-area: food-cat;
+	grid-area: 4 / 3 / 5 / 4;
+}
+
+#clothing-cat {
+	grid-area: clothing-cat;
+	grid-area: 4 / 4 / 5 / 5;
+}
+
+#bills-cat {
+	grid-area: bills-cat;
+	grid-area: 4 / 5 / 5 / 6;
+}
+
+footer {
+	grid-area: footer;
+	grid-area: 5 / 1 / 6 / 6;
+	text-align: center;
+}
+
+footer p {
+	font-size: 0.85em;
+	line-height: 1.5em;
+	color: #839496;
+}
+
+footer a {
+	text-decoration: none;
+	cursor: pointer;
+	color: #839496;
+	padding: 0px 10px;
+}
+
+footer a:not(:last-child) {
+	border-right: 1px solid #839496;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+	.grid-container {
+		display: grid;
+		gap: 1em;
+		grid-template-columns: repeat(3, 1fr);
+		/* grid-template-rows: repeat(5, auto); */
+		grid-template-areas:
+			'header header header'
+			'balance-total income expenses'
+			'input history history '
+			'. income-cat .'
+			'. ent-cat .'
+			'. food-cat .'
+			'. clothing-cat .'
+			'. bills-cat .'
+			'footer footer footer';
+	}
+
+	.neu-box {
+		padding: 10px 10px 15px;
+	}
+
+	#input-form h2,
+	#input-form h3,
+	#history-container h2,
+	#history-container h3 {
+		font-size: 1em;
+	}
+
+	#categories-select,
+	input,
+	#btn {
+		font-size: 0.8em;
+		height: 30px;
+		border-radius: 20px;
+		padding: 2px 8px;
+		width: 100%;
+		margin: auto;
+	}
+
+	#categories-select,
+	input[type='text']::placeholder,
+	input[type='number']::placeholder {
+		color: #999;
+	}
+
+	#btn {
+		margin-top: 10px;
+	}
+
+	ul {
+		padding: 5px;
+	}
+
+	li {
+		margin: 5px 0;
+		padding: 5px;
+		border-radius: 40px;
+		font-size: 0.8em;
+	}
+
+	.delete-btn {
+		padding: 5px;
+	}
+
+	.form-control p {
+		font-size: 0.5em;
+	}
+
+	.categories {
+		padding: 10px;
+	}
+
+	.categories li {
+		font-size: 0.7em;
+		display: flex;
+		justify-content: space-between;
+		padding: 5px;
+	}
+
+	h5 {
+		font-size: 0.9em;
+	}
+
+	#main-title {
+		grid-area: header;
+	}
+
+	#balance {
+		grid-area: balance-total;
+	}
+
+	#income {
+		grid-area: income;
+	}
+
+	#expenses {
+		grid-area: expenses;
+	}
+
+	#input-form {
+		grid-area: input;
+	}
+
+	#history-container {
+		grid-area: history;
+	}
+
+	#income-cat {
+		grid-area: income-cat;
+	}
+
+	#ent-cat {
+		grid-area: ent-cat;
+	}
+
+	#food-cat {
+		grid-area: food-cat;
+	}
+
+	#clothing-cat {
+		grid-area: clothing-cat;
+	}
+
+	#bills-cat {
+		grid-area: bills-cat;
+	}
+
+	footer {
+		grid-area: footer;
+	}
+}
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+	.grid-container {
+		display: grid;
+		gap: 1em;
+		grid-template-columns: repeat(3, 1fr);
+		/* grid-template-rows: repeat(5, auto); */
+		grid-template-areas:
+			'header header header'
+			'balance-total income expenses'
+			'input history history '
+			'. income-cat .'
+			'. ent-cat .'
+			'. food-cat .'
+			'. clothing-cat .'
+			'. bills-cat .'
+			'footer footer footer';
+	}
+
+	h2 {
+		font-size: 1.5em;
+	}
+
+	.amounts > span {
+		font-size: 1.3em;
+	}
+
+	.neu-box {
+		padding: 10px 10px 15px;
+	}
+
+	#input-form h2,
+	#input-form h3,
+	#history-container h2,
+	#history-container h3 {
+		font-size: 1em;
+	}
+
+	#categories-select,
+	input,
+	#btn {
+		font-size: 0.8em;
+		height: 30px;
+		border-radius: 20px;
+		padding: 2px 8px;
+		width: 100%;
+		margin: auto;
+	}
+
+	#categories-select,
+	input[type='text']::placeholder,
+	input[type='number']::placeholder {
+		color: #999;
+	}
+
+	#btn {
+		margin-top: 10px;
+	}
+
+	ul {
+		padding: 5px;
+	}
+
+	li {
+		margin: 5px 0;
+		padding: 5px;
+		border-radius: 40px;
+		font-size: 0.8em;
+	}
+
+	.delete-btn {
+		padding: 5px;
+	}
+
+	.form-control p {
+		font-size: 0.5em;
+	}
+
+	.categories {
+		padding: 10px;
+	}
+
+	.categories li {
+		font-size: 0.7em;
+		display: flex;
+		justify-content: space-between;
+		padding: 5px;
+	}
+
+	#main-title {
+		grid-area: header;
+		text-align: center;
+		letter-spacing: 3px;
+	}
+
+	#balance {
+		grid-area: balance-total;
+	}
+
+	#income {
+		grid-area: income;
+	}
+
+	#expenses {
+		grid-area: expenses;
+	}
+
+	#input-form {
+		grid-area: input;
+	}
+
+	#history-container {
+		grid-area: history;
+	}
+
+	#income-cat {
+		grid-area: income-cat;
+	}
+
+	#ent-cat {
+		grid-area: ent-cat;
+	}
+
+	#food-cat {
+		grid-area: food-cat;
+	}
+
+	#clothing-cat {
+		grid-area: clothing-cat;
+	}
+
+	#bills-cat {
+		grid-area: bills-cat;
+	}
+
+	footer {
+		grid-area: footer;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.grid-container {
+		display: grid;
+		gap: 1em;
+		grid-template-columns: 1fr;
+		grid-template-columns: minmax(200px, 1fr);
+		grid-template-areas:
+			'header'
+			'balance-total'
+			'income'
+			'expenses'
+			'input'
+			'history'
+			'income-cat'
+			'ent-cat'
+			'food-cat'
+			'clothing-cat'
+			'bills-cat'
+			'footer';
+		/* grid-template-rows: repeat(5, auto); */
+	}
+
+	h2 {
+		font-size: 1.5em;
+	}
+
+	.amounts > span {
+		font-size: 1.3em;
+	}
+
+	.neu-box {
+		padding: 10px 10px 15px;
+	}
+
+	#input-form h2,
+	#input-form h3,
+	#history-container h2,
+	#history-container h3 {
+		font-size: 1em;
+	}
+
+	#categories-select,
+	input,
+	#btn {
+		font-size: 0.8em;
+		height: 30px;
+		border-radius: 20px;
+		padding: 2px 8px;
+		width: 100%;
+		margin: auto;
+	}
+
+	#categories-select,
+	input[type='text']::placeholder,
+	input[type='number']::placeholder {
+		color: #999;
+	}
+
+	#btn {
+		margin-top: 10px;
+	}
+
+	ul {
+		padding: 5px;
+	}
+
+	li {
+		margin: 5px 0;
+		padding: 5px;
+		border-radius: 40px;
+		font-size: 0.8em;
+	}
+
+	.delete-btn {
+		padding: 5px;
+	}
+
+	.form-control p {
+		font-size: 0.5em;
+	}
+
+	.categories {
+		padding: 10px;
+	}
+
+	.categories li {
+		font-size: 0.7em;
+		display: flex;
+		justify-content: space-between;
+		padding: 5px;
+	}
+
+	h5 {
+		font-size: 0.9em;
+	}
+
+	#main-title {
+		grid-area: header;
+	}
+
+	#balance {
+		grid-area: balance-total;
+	}
+
+	#income {
+		grid-area: income;
+	}
+
+	#expenses {
+		grid-area: expenses;
+	}
+
+	#input-form {
+		grid-area: input;
+	}
+
+	#history-container {
+		grid-area: history;
+	}
+
+	#income-cat {
+		grid-area: income-cat;
+	}
+
+	#ent-cat {
+		grid-area: ent-cat;
+	}
+
+	#food-cat {
+		grid-area: food-cat;
+	}
+
+	#clothing-cat {
+		grid-area: clothing-cat;
+	}
+
+	#bills-cat {
+		grid-area: bills-cat;
+	}
+
+	footer {
+		grid-area: footer;
+	}
+}
